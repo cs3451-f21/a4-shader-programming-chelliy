@@ -34,7 +34,8 @@ class Drawing extends DrawingCommon {
         {
             u_ambient: {value: new THREE.Color( num!.valueAsNumber, num!.valueAsNumber, num!.valueAsNumber)},
             u_color: {value: new THREE.Color( 0xdd2200 )},
-            u_colorTexture: {value: null} 
+            u_colorTexture: {value: null},
+            squarenumber:{value:5} 
         },
         {
             u_ambient: {value: new THREE.Color( num!.valueAsNumber, num!.valueAsNumber, num!.valueAsNumber)},

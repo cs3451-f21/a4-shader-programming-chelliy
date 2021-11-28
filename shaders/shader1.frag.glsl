@@ -10,6 +10,7 @@ varying vec2 v_texcoord;
 uniform vec3 u_color;
 uniform sampler2D u_colorTexture;
 uniform vec3 u_ambient;
+uniform float squarenumber;
 
 void main() {
     // make up a light vector and use it for diffuse lighting
@@ -29,4 +30,12 @@ void main() {
 
     // final color is diffuse + ambient * the gray scale of the texture
     gl_FragColor = gray * (diffuse + ambient);
+
+    float resultx = mod(ceil(v_texcoord.r/(1.0/squarenumber)), 2.0);
+    float resulty = mod(ceil(v_texcoord.g/(1.0/squarenumber)), 2.0);
+
+    float resultcolor = abs((resultx-resulty));
+
+    gl_FragColor = vec4(resultcolor,resultcolor,resultcolor,1.0);
+
 }
