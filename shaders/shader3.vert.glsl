@@ -17,8 +17,8 @@ varying vec2 v_texcoord;
 uniform float time;
 
 void main() {
-    v_normal = normalize(mat3(normalMatrix) *vec3(-cos(position.g+time), 1, 0));
+    v_normal = mat3(normalMatrix) * normalize(vec3(0,-cos(position.g+time),1));
     v_texcoord = uv;
 
-    gl_Position = projectionMatrix * modelViewMatrix * vec4( position.r, position.g, sin(position.g + time) + position.b, 1.0 );
+    gl_Position = projectionMatrix * modelViewMatrix * vec4( position.x, position.y, sin(position.y + time) + position.z, 1.0 );
 }

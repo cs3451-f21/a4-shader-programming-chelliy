@@ -13,7 +13,7 @@ uniform vec3 u_ambient;
 
 void main() {
     // make up a light vector and use it for diffuse lighting
-    vec3 light = vec3( 0.5, 0.2, 1.0 );
+    vec3 light = vec3( 0, 1, 1.0 );
     light = normalize( light );
 
     // dot product of light and sorface normal

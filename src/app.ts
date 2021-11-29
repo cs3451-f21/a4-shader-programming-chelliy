@@ -144,7 +144,7 @@ class Drawing extends DrawingCommon {
             break;
 
           case 2:
-            this.uniforms[2].u_color.value.offsetHSL( 0.005, 0, 0 );
+            // this.uniforms[2].u_color.value.offsetHSL( 0.005, 0, 0 );
             this.uniforms[2].u_ambient.value.setScalar(num!.valueAsNumber)
             this.uniforms[2].time.value = time
             break;
