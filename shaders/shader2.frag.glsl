@@ -10,8 +10,21 @@ varying vec2 v_texcoord;
 uniform vec3 u_color;
 uniform sampler2D u_colorTexture;
 uniform vec3 u_ambient;
+uniform float radius;
 
 void main() {
+
+    float resultx = ceil(v_texcoord.r/0.2)*0.2 - 0.1;
+    float resulty = ceil(v_texcoord.g/0.2)*0.2 - 0.1;
+
+    float distanceCheck = sqrt(pow((v_texcoord.r - resultx), 2.0) + pow((v_texcoord.g - resulty), 2.0));
+     
+
+    if(all(lessThanEqual( vec2(distanceCheck, -1),vec2(radius,0)))){
+        discard;
+    }
+
+
     // make up a light vector and use it for diffuse lighting
     vec3 light = vec3( 0.5, 0.2, 1.0 );
     light = normalize( light );

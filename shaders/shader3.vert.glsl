@@ -14,10 +14,11 @@
 // interpolate the normal and texture coordinates across the surface
 varying vec3 v_normal;
 varying vec2 v_texcoord;
+uniform float time;
 
 void main() {
-    v_normal = mat3(normalMatrix) * normal;
+    v_normal = normalize(vec3(-cos(position.g+time), -.5, 0));
     v_texcoord = uv;
 
-    gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+    gl_Position = projectionMatrix * modelViewMatrix * vec4( position.r, position.g, sin(position.g + time) + position.b, 1.0 );
 }

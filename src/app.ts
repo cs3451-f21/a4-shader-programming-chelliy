@@ -40,12 +40,14 @@ class Drawing extends DrawingCommon {
         {
             u_ambient: {value: new THREE.Color( num!.valueAsNumber, num!.valueAsNumber, num!.valueAsNumber)},
             u_color: {value: new THREE.Color( 0xdd2200 )},
-            u_colorTexture: {value: null} 
+            u_colorTexture: {value: null}, 
+            radius:{value:0.0}
         },
         {
             u_ambient: {value: new THREE.Color( num!.valueAsNumber, num!.valueAsNumber, num!.valueAsNumber)},
             u_color: {value: new THREE.Color( 0xdd2200 )},
-            u_colorTexture: {value: null} 
+            u_colorTexture: {value: null},
+            time:{value:0.0}
         },
         {
             u_ambient: {value: new THREE.Color( num!.valueAsNumber, num!.valueAsNumber, num!.valueAsNumber)},
@@ -132,16 +134,19 @@ class Drawing extends DrawingCommon {
           case 0:
             this.uniforms[0].u_color.value.offsetHSL( 0.005, 0, 0 );
             this.uniforms[0].u_ambient.value.setScalar(num!.valueAsNumber)
+            this.uniforms[0].squarenumber.value = Math.floor((num!.valueAsNumber*15) + 5)
             break;
 
           case 1:
             this.uniforms[1].u_color.value.offsetHSL( 0.005, 0, 0 );
             this.uniforms[1].u_ambient.value.setScalar(num!.valueAsNumber)
+            this.uniforms[1].radius.value = num!.valueAsNumber/10.0
             break;
 
           case 2:
             this.uniforms[2].u_color.value.offsetHSL( 0.005, 0, 0 );
             this.uniforms[2].u_ambient.value.setScalar(num!.valueAsNumber)
+            this.uniforms[2].time.value = time
             break;
 
           case 3:
