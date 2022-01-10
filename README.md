@@ -1,3 +1,6 @@
+
+(Public only for jop application purpose, shouldn't be copyed as an answer)
+
 # Assignment 4: Shaders
 
 For this project, you will be programming the GPU using *vertex* and *fragment* hardware shaders to accomplish various visual effects.  As we discussed in class:
